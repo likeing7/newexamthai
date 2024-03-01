@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Thasadith:wght@400;600&display=swap">
+    <title>วิชาภาษาไทยเพื่อการสื่อสาร</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+
+<body>
+    <div class="container">
+        <a href="developer.html" class="cloud"></a>
+    </div>
+    <script>
+        alert('โปรดกด F11 เพื่อการได้รับประสบการณ์เต็มประสิทธิภาพ');
+        function randomText(){
+            var text = ("กขฃคฅฆงจฉชซฌญฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮ");
+            letter = text[Math.floor(Math.random() * text.length)];
+            return letter;
+        }
+
+        function rain(){
+            let cloud = document.querySelector('.cloud');
+            let e = document.createElement('div');
+            let left = Math.floor(Math.random() * 310);
+            let size = Math.random() * 1.5;
+            let duration = Math.random() * 1;
+
+            e.classList.add('text');
+            cloud.appendChild(e);
+            e.innerText = randomText()
+            e.style.left = left + 'px';
+            e.style.fontSize = 0.5+size+'em';
+            e.style.animationDuration = 1 + duratior + 's';
+
+            setTimeout(function(){
+                cloud.removeChild(e)
+            },2000)
+        }
+        setInterval(function(){
+            rain()
+        },20);
+    </script>
+</body>
+
+</html>
